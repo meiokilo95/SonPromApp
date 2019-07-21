@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="fondo">
+    <ion-title style="text-align: center;">Son Promoción</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #101010;">
+
+<P style="text-align: center;font-size: 37px; font-family:Calibri;color:#fdfefe;margin-bottom: 0px;margin-top:0px">Destacado</P>
+<ion-grid>
+  <ion-slides style="height: 250px;" [slidesPerView]="2" >
+   <ion-slide style="padding:5px;margin-top:40px;"  *ngFor="let treu of trues">   
+    <button (click)="goDescrp(treu)" style="background-color: #212429;" ><img class="thumb" src="{{treu.Ruta}}"></button>
+    <p style="text-align: center;color:#fdfefe;height: 78px;">{{treu.Name}}</p> 
+  </ion-slide>
+  </ion-slides>
+
+  </ion-grid>
+
+<ion-grid>
+  <ion-row>
+    <ion-col col-12><button ion-button full large (click)="goLunes('Lunes','comida')" class="lunes" style="height: 70px;"><span class="button-inner">Lunes</span><div class="button-effect"></div></button></ion-col>
+    </ion-row>
+</ion-grid>
+
+<ion-grid>
+  <ion-row>
+    <ion-col col-6><button ion-button full large class="martes" (click)="goLunes('Martes','comida')">Martes</button></ion-col>
+    <ion-col col-6><button ion-button full large class="miercoles" (click)="goLunes('Miércoles','comida')">Miércoles</button></ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid>
+  <ion-row>
+    <ion-col col-6><button ion-button full large class="jueves" (click)="goLunes('Jueves','comida')">Jueves</button></ion-col>
+    <ion-col col-6><button ion-button full large class="viernes" (click)="goLunes('Viernes','comida')">Viernes</button></ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid>
+  <ion-row>
+    <ion-col col-6><button ion-button full large class="sabado" (click)="goLunes('Sábado','comida')">Sábado</button></ion-col>
+    <ion-col col-6><button ion-button full large class="domingo" (click)="goLunes('Domingo','comida')">Domingo</button></ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

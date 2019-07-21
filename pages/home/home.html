@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="fondo">
+    <ion-title style="text-align: center;">Son Promoción</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: #101010;">
+
+<P style="text-align: center;font-size: 37px; font-family:Calibri;color:#fdfefe;margin-bottom: 0px;margin-top:0px">Destacado</P>
+<ion-grid>
+  <ion-slides style="height: 250px;" [slidesPerView]="2"  >
+   <ion-slide style="padding:5px;margin-top:40px;"  *ngFor="let item of items">   
+    <button (click)="goDescrp(item)" style="background-color: #212429;" ><img class="thumb" src="{{item.Ruta}}"></button>
+    <p style="text-align: center;color:#fdfefe;height: 78px;">{{item.Name}}</p> 
+  </ion-slide>
+  </ion-slides>
+
+  </ion-grid>
+
+<P style="text-align: center;font-size: 40px;color:#fdfefe"> {{diaSemana}} </P>  
+<ion-slides   slidesPerView="2" style="height:65%;margin-bottom: 0px;margin-top:0px">
+  <ion-slide  style="padding:5px;margin-top:40px;" *ngFor="let treu of trues">
+  <div>
+    <button (click)="goDescrp(treu)"  style="background-color: #212429;" ><img class="thumb" src="{{treu.Ruta}}" ></button>
+    <p style="text-align: center;color:#fdfefe;height: 78px;">{{treu.Name}}</p> 
+    </div>
+  </ion-slide>
+</ion-slides>
+</ion-content>
+

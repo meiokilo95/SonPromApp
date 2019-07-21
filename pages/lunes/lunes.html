@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="fondo">
+    <ion-title>{{dia2}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color: #101010;">
+<ion-searchbar style="background-color: #101010;" placeholder="Buscar" (ionInput)="getItems($event)"></ion-searchbar>
+
+<ion-list *ngFor="let bus of buscar">
+  
+    <button ion-item text-wrap (click)="goDescrp(bus,dia2)" style="background-color: #101010;">
+        <ion-thumbnail item-start >
+          <img src="{{bus.Ruta}}">
+        </ion-thumbnail>
+      <h2 style="color:#fdfefe">{{bus.Name}}</h2>
+      <p style="color:#fdfefe">{{bus.Direction}} </p>
+      <div style="font-family:Lucida;color:#fbf871">{{bus.Tipo}}</div>
+    </button> 
+</ion-list>
+
+</ion-content>

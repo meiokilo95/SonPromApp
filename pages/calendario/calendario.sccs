@@ -1,0 +1,5 @@
+page-calendario {
+	.thumb{
+		padding:10px;
+	}
+}

@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-navbar color="fondo">
+    <ion-title style="text-align: center;color:#FFFFFF">Son Promoción</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color: #101010;">
+<ion-list>
+  <ion-item text-wrap style="background-color: #101010;">
+    <ion-thumbnail item-start>
+      <img src="{{info.Ruta}}">
+      </ion-thumbnail>
+      <h1 style="font-family:calibri;color:#FFFFFF">{{info.Name}}</h1>
+      <span style="font-family:calibri;color:#FFFFFF">
+      <ion-icon name="car" *ngIf="info.Estacionamiento==1" style="padding: 2px;"></ion-icon>
+      <ion-icon name="wifi" *ngIf="info.Wifi==1" style="padding: 2px;"></ion-icon>
+      <ion-icon ios="ios-card" *ngIf="info.Tarjetas==1" md="md-card" style="padding: 2px;"></ion-icon>
+      <i class="fas fa-wheelchair" *ngIf="info.Discapacitados==1" style="margin-left: 2px"></i>
+      <i class="fas fa-motorcycle" *ngIf="info.Domicilio==1" style="margin-left: 2px" ></i>
+
+    </span>
+    <p style="font-family:Lucida;color:#fbf871">{{info.Tipo}}</p>
+    
+    <span style="font-family:calibri;color:#FFFFFF">
+      <ion-icon ios="logo-facebook" *ngIf="info.FB != null" (click)="presentToastFB(info.FB)" md="logo-facebook" style="padding: 5px;"></ion-icon>
+      <ion-icon ios="logo-instagram" *ngIf="info.Insta != null" (click)="presentToastInsta(info.Insta)" md="logo-instagram" style="padding: 5px;"></ion-icon>
+      <ion-icon name="logo-twitter"  *ngIf="info.TW != null" (click)="presentToastTW(info.TW)" style="padding: 5px;"></ion-icon>
+      <ion-icon ios="ios-globe-outline" *ngIf="info.Page != null" (click)="presentToastPage(info.Page)" md="ios-globe-outline" style="padding: 5px;"></ion-icon>
+
+    </span>
+  </ion-item>
+
+
+</ion-list>
+
+<ion-list style="background-color: #101010;">
+
+<ion-item text-wrap style="background-color: #101010;border-bottom: 0px solid #dedede;">
+<p style="font-family:calibri;color:#C3C3C3" (click)="navme(info.Direction)" ><ion-icon name="locate"style="padding: 5px;"></ion-icon> {{info.Direction}}</p> 
+ </ion-item>
+
+<ion-item text-wrap *ngIf="info.Direction1 != null" style="background-color: #101010;border-bottom: 0px solid #dedede;">
+<p style="font-family:calibri;color:#C3C3C3" (click)="navme(info.Direction)" ><ion-icon name="locate"style="padding: 5px;"></ion-icon> {{info.Direction1}}</p> 
+ </ion-item>
+
+ <ion-item text-wrap style="background-color: #101010;">
+<p style="font-family:lucida;color:#C3C3C3" (click)="call(info.Telefono)"><ion-icon name="call" style="padding: 5px;"></ion-icon> {{info.Telefono}}</p> 
+ </ion-item>
+
+ <ion-item text-wrap  *ngIf="info.Telefono1 != null" style="background-color: #101010;">
+<p style="font-family:lucida;color:#C3C3C3" (click)="call(info.Telefono1)"><ion-icon name="call" style="padding: 5px;"></ion-icon> {{info.Telefono1}}</p> 
+ </ion-item>
+
+  <ion-item text-wrap style="background-color: #101010;border-bottom: 1px solid #dedede;">
+<p style="font-family:Lucida;color:#fbf871;">  <ion-icon name="time" style="padding: 5px;"></ion-icon>{{info.Hora}}</p> 
+ </ion-item>
+
+ <ion-item text-wrap style="background-color: #101010;">
+<span style="font-family:lucida;color:#C3C3C3;">Acerca del Establecimiento</span>
+<p style="font-family:lucida;color:#C3C3C3">{{infu}}</p> 
+ </ion-item>
+</ion-list>
+
+</ion-content>
